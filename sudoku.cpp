@@ -12,8 +12,18 @@ using namespace std;
 bool isSafe(int grid[N][N], int row,int col, int num);*/
 
 template<typename T>
-sudoku<T>::sudoku(){}
+sudoku<T>::sudoku():m_row(0),m_col(0){}
+template<class T>
+T sudoku<T> :: getrow()
+{
+    return m_row;
+}
 
+template<class T>
+T sudoku<T> :: getcol()
+{
+    return m_col;
+}
 constraint::constraint(){}
 
 template<typename T>
@@ -97,6 +107,16 @@ void sudoku<T>::printGrid(T  grid[N][N])
         cout << endl;
     }
 }
+
+template<typename T>
+bool sudoku<T> :: operator == (const sudoku &ref)
+{
+    T row,col;
+    if(ref.row>9 && ref.col>9)	
+   	return false;
+}
+
+
 int main()
 {
     sudoku<int> s; //template passing
@@ -115,6 +135,8 @@ int main()
             file>>grid[i][j];
         }
     }
+    cout<<"------------------------------------------------------"<<endl;
+    cout<<"Unsolved Sudoku Problem"<<endl; 
     cout<<"    0 1 2 3 4 5 6 7 8"<<endl<<endl;
     vector<vector<int> > vec;
     vector<int>::iterator x;
@@ -137,11 +159,11 @@ int main()
         cout<<endl;
     }
     cout<<"------------------------------------------------------"<<endl;
-    
+    cout<<"Solved Sudoku Problem"<<endl;
     if (s.SolveSudoku(grid) == true)
         p->printGrid(grid);
     else
         cout << "No solution exists";
-
+    cout<<"------------------------------------------------------"<<endl;
     return 0;
 }
