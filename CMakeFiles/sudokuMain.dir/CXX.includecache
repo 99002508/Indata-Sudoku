@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Downloads/MP/Indata-Sudoku/constraint.h
+
+/home/user/Downloads/MP/Indata-Sudoku/datasudoku.h
+constraint.h
+/home/user/Downloads/MP/Indata-Sudoku/constraint.h
+bits/stdc++.h
+-
+
+/home/user/Downloads/MP/Indata-Sudoku/sudoku.cpp
+datasudoku.h
+/home/user/Downloads/MP/Indata-Sudoku/datasudoku.h
+constraint.h
+/home/user/Downloads/MP/Indata-Sudoku/constraint.h
+bits/stdc++.h
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/sudokuMain.dir/sudoku.cpp.o  -o sudokuMain -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread 
