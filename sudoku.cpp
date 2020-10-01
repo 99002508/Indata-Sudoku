@@ -6,27 +6,35 @@ using namespace std;
 
 
 #define UNASSIGNED 0
-
-
 #define N 9
 
-//bool FindUnassignedLocation(int grid[N][N],
-//                            int &row, int &col);
+/*bool FindUnassignedLocation(int grid[N][N],int &row, int &col);
+bool isSafe(int grid[N][N], int row,int col, int num);*/
 
-//bool isSafe(int grid[N][N], int row,
-//                   int col, int num);
-sudoku::sudoku(){}
+template<typename T>
+sudoku<T>::sudoku(){}
+
 constraint::constraint(){}
 
-bool sudoku::SolveSudoku(int grid[N][N])
+template<typename T>
+bool sudoku<T>::isSafe(T grid[N][N],T row,T col,T num)
 {
-    int row, col;
+    return !UsedInRow(grid, row, num) &&
+    	   !UsedInCol(grid, col, num) &&
+    	   !UsedInBox(grid, row - row % 3,col - col % 3, num)&&
+           grid[row][col] == UNASSIGNED;
+}
+
+template<typename T>
+bool sudoku<T>::SolveSudoku(T grid[N][N])
+{
+    T row, col;
 
     if (!FindUnassignedLocation(grid, row, col))
     return true;
 
 
-    for (int num = 1; num <= 9; num++)
+    for (T num = 1; num <= 9; num++)
     {
 
         if (isSafe(grid, row, col, num))
@@ -42,8 +50,8 @@ bool sudoku::SolveSudoku(int grid[N][N])
     }
     return false;
 }
-bool sudoku::FindUnassignedLocation(int grid[N][N],
-                            int &row, int &col)
+template<typename T>
+bool sudoku<T>::FindUnassignedLocation(T grid[N][N],T &row, T &col)
 {
     for (row = 0; row < N; row++)
         for (col = 0; col < N; col++)
@@ -51,7 +59,7 @@ bool sudoku::FindUnassignedLocation(int grid[N][N],
                 return true;
     return false;
 }
-
+//template<typename T>
 bool constraint::UsedInRow(int grid[N][N], int row, int num)
 {
     for (int col = 0; col < N; col++)
@@ -59,6 +67,7 @@ bool constraint::UsedInRow(int grid[N][N], int row, int num)
             return true;
     return false;
 }
+//template<typename T>
 bool constraint::UsedInCol(int grid[N][N], int col, int num)
 {
     for (int row = 0; row < N; row++)
@@ -66,43 +75,34 @@ bool constraint::UsedInCol(int grid[N][N], int col, int num)
             return true;
     return false;
 }
-bool constraint::UsedInBox(int grid[N][N], int boxStartRow,
-               int boxStartCol, int num)
+//template<typename T>
+bool constraint::UsedInBox(int grid[N][N],int boxStartRow,int boxStartCol,int num)
 {
     for (int row = 0; row < 3; row++)
         for (int col = 0; col < 3; col++)
-            if (grid[row + boxStartRow]
-                    [col + boxStartCol] == num)
+            if (grid[row + boxStartRow][col + boxStartCol] == num)
                 return true;
     return false;
 }
 
-bool sudoku::isSafe(int grid[N][N], int row,
-                   int col, int num)
-{
-    return !UsedInRow(grid, row, num) &&
-           !UsedInCol(grid, col, num) &&
-           !UsedInBox(grid, row - row % 3 ,
-                      col - col % 3, num) &&
-            grid[row][col] == UNASSIGNED;
-}
-void sudoku::printGrid(int grid[N][N])
+template<typename T>
+void sudoku<T>::printGrid(T  grid[N][N])
 {
     cout<<"    0 1 2 3 4 5 6 7 8"<<endl<<endl;
-    for (int row = 0; row < N; row++)
+    for (T row = 0; row < N; row++)
     {
         cout<<row<<"   ";
-    for (int col = 0; col < N; col++)
+    for (T col = 0; col < N; col++)
             cout << grid[row][col] <<" ";
         cout << endl;
     }
 }
-
+//template class sudoku<int>;
+//template class constraint<int>;
+//template<typename T>
 int main()
 {
-	sudoku s;
-	constraint c;
-	
+    sudoku<int> s;	
     int grid[N][N]={0},i,j;
     ifstream file("Input_Clue.txt");
     if(file.is_open())
