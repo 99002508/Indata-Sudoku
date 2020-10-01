@@ -102,7 +102,10 @@ void sudoku<T>::printGrid(T  grid[N][N])
 //template<typename T>
 int main()
 {
-    sudoku<int> s;	
+    sudoku<int> s;
+    constraint *p;
+    p=&s;
+
     int grid[N][N]={0},i,j;
     ifstream file("Input_Clue.txt");
     if(file.is_open())
@@ -134,8 +137,9 @@ int main()
         cout<<endl;
     }
     cout<<"------------------------------------------------------"<<endl;
+    
     if (s.SolveSudoku(grid) == true)
-        s.printGrid(grid);
+        p->printGrid(grid);
     else
         cout << "No solution exists";
 
