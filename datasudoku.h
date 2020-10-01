@@ -1,10 +1,13 @@
 #ifndef __DATASUDOKU_H
 #define __DATASUDOKU_H
 #include "constraint.h"
+#include <bits/stdc++.h>
+using namespace std;
 
 #define UNASSIGNED 0
 #define N 9
-template<typename T>
+
+template<typename T> //class template
 class sudoku : public constraint 
 {
 	public:

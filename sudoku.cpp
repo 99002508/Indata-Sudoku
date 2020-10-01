@@ -97,14 +97,11 @@ void sudoku<T>::printGrid(T  grid[N][N])
         cout << endl;
     }
 }
-//template class sudoku<int>;
-//template class constraint<int>;
-//template<typename T>
 int main()
 {
-    sudoku<int> s;
-    constraint *p;
-    p=&s;
+    sudoku<int> s; //template passing
+    constraint *p;//dynamic binding
+    p=&s;//upcasting
 
     int grid[N][N]={0},i,j;
     ifstream file("Input_Clue.txt");
@@ -119,8 +116,11 @@ int main()
         }
     }
     cout<<"    0 1 2 3 4 5 6 7 8"<<endl<<endl;
+    vector<vector<int> > vec;
+    vector<int>::iterator x;
+    vector<int>::iterator y;
     for(int x=0;x<9;x++)
-    {
+    {	 
         cout<<x<<"   ";
         for(int y=0;y<9;y++)
         {
