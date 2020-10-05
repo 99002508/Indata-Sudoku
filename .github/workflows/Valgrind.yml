@@ -19,5 +19,5 @@ jobs:
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
     - name: make test
       run: |
-        make test -C Indata-Sudoku
-        valgrind ./Indata-Sudoku/test.out
+        g++ sudoku.cpp 
+        valgrind ./a.out
