@@ -20,4 +20,4 @@ jobs:
     - name: make test
       run: |
         make test -C Indata-Sudoku
-        valgrind ./Indata-Sudoku/a.out
+        valgrind ./Indata-Sudoku/test.out
