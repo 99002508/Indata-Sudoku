@@ -1,6 +1,6 @@
-all:all.out
-all.out:sudoku.o
-  g++ sudoku.o -o all.out
-sudoku.o:sudoku.c constraint.h datasudoku.h
+all:
+  g++ sudoko.cpp -o all.out
+run:
+  ./all.out
 clean:
   rm -rf *.o all.out
