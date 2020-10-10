@@ -10,8 +10,8 @@ using namespace std;
 
 TEST(sudoku,DefaultConstructor) {
     sudoku<int> stest;
-    EXPECT_EQ(0,stest.getreal());
-    EXPECT_EQ(0,stest.getimage());
+    EXPECT_EQ(0,stest.getrow());
+    EXPECT_EQ(0,stest.getcol());
 }
 int main(int argc, char **argv) 
     {
