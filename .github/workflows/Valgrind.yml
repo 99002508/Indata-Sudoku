@@ -17,7 +17,7 @@ jobs:
       run: |
         sudo apt-get -y install valgrind
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
-    - name: make test
+    - name: valgrind check
       run: |
         g++ sudoku.cpp 
         valgrind ./a.out
