@@ -1,3 +1,0 @@
-/home/user/Downloads/MP/Indata-Sudoku/CMakeFiles/rebuild_cache.dir
-/home/user/Downloads/MP/Indata-Sudoku/CMakeFiles/sudokuMain.dir
-/home/user/Downloads/MP/Indata-Sudoku/CMakeFiles/edit_cache.dir
