@@ -1,6 +1,4 @@
-all:
-  g++ sudoko.cpp -o all.out
+all: 
+	g++ sudoku.cpp -o all.out
 run:
-  ./all.out
-clean:
-  rm -rf *.o all.out
+	./all.out
