@@ -9,7 +9,7 @@ The project aims at developing a C++ application program, that allows the user t
 Backtracking algorithm used for solving sudoku problem.
 
 ## Input
-The input to the problem will be taken either from a .csv/.text file which contains the clues and position 
+The input to the problem will be taken either from a ".csv" or a ".text" file which contains the clues and position 
            value of the said problem in distinct formats.
 ## Output
 Solution for the printed sudoku.
